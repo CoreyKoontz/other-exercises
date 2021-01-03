@@ -73,3 +73,90 @@ function isCapitolLetter(input) {
   return input === input.toUpperCase();
 } // figure out how we can return false for a number entered as a string ("5" is returning true)
 
+function isTrue(input) {
+    return input === true;
+}
+
+function isFalse(input) {
+    return input === false;
+}
+
+function not(input) {
+    return !input;
+}
+
+function addOne(input) {
+    return ++input;
+}
+
+function isEven(input) {
+    let n = Number(input)
+    if (input === false) {
+        return false;
+    } else {
+        return n % 2 === 0;
+    }
+}
+
+function isIdentical(x, y) {
+    return x === y;
+}
+
+function isEqual(x, y) {
+    return x == y;
+}
+
+function or(x, y) {
+    return x || y;
+}
+
+function concat(x, y) {
+    return (x.toString()) + (y.toString());
+}
+
+function and(x, y) {
+    return x && y;
+}
+
+function isBoolean(input) {
+    return typeof(input) === "boolean";
+}
+
+function isString(input) {
+    return typeof(input) === "string";
+}
+function isNotString(input) {
+    return typeof(input) !== "string";
+}
+
+function isNotANumber(input) {
+    return typeof(input) !== "number";
+}
+
+function isEmptyString(input) {
+    return input === "";
+}
+
+function isNegative(input) {
+    return input < 0;
+}
+
+function isPositive(input) {
+    return input > 0;
+}
+
+function isZero(input) {
+    return input == 0;
+}
+
+function isArray(input) {
+    return Array.isArray(input);//typeof input === "object";
+}
+
+function upperCase(input) {
+    if (typeof input === "string") {
+        return input.toUpperCase();
+    } else {
+        return input === "string";
+    }                              //return input.toUpperCase();
+}
