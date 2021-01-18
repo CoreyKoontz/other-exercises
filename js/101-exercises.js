@@ -57,88 +57,268 @@ function isOdd(x) {
 function isEven (x) {
     return parseFloat(x) % 2 == 0;
 }
+
 // 16.
 function identity(x) {
     return x;
 }
+
 // 17.
 function isPositiveOdd(x) {
     var x = parseFloat(x);
     return (x % 2 !== 0) && (x > 0);
 }
-// 18.
 
+// 18.
+function isPositiveEven(x) {
+    var x = parseFloat(x);
+    return (x % 2 == 0) && (x > 0);
+}
 
 // 19.
-
+function isNegativeOdd(x) {
+    var x = parseFloat(x)
+    return (x % 2 !== 0) && (x < 0);
+}
 
 // 20.
-
+function isNegativeEven(x) {
+    var x = parseFloat(x);
+    return (x % 2 == 0) && (x < 0);
+}
 
 // 21.
-
+function half(x) {
+    var x = parseFloat(x);
+    return x / 2;
+}
 
 // 22.
-
+function double(x) {
+    var x = parseFloat(x);
+    return x * 2;
+}
 
 // 23.
-
+function triple(x) {
+    var x = parseFloat(x);
+    return x * 3;
+}
 
 // 24.
-
+function reverseSign(x) {
+    var x = parseFloat(x);
+    return x * -1;
+}
 
 // 25.
-
+function absoluteValue(x) {
+    var x = parseFloat(x);
+    return Math.abs(x);
+}
 
 // 26.
-
+function isMultipleOfThree(x) {
+    var x = parseFloat(x);
+    return x % 3 === 0;
+}
 
 // 27.
-
+function isMultipleOfFive(x) {
+    var x = parseFloat(x);
+    return x % 5 === 0;
+}
 
 // 28.
-
+function isMultipleOfBothThreeAndFive(x) {
+    var x = parseFloat(x);
+    return (x % 3 === 0) && (x % 5 === 0);
+}
 
 // 29.
-
+function square(x) {
+    var x = parseFloat(x);
+    return x ** 2;
+}
 
 // 30.
-
+function add(x, y) {
+    var x = parseFloat(x);
+    var y = parseFloat(y);
+    return x + y;
+}
 
 // 31.
-
+function cube(x) {
+    var x = parseFloat(x);
+    return x ** 3;
+}
 
 // 32.
-
+function squareRoot(x) {
+    var x = parseFloat(x);
+    return Math.sqrt(x);
+}
 
 // 33.
-
+function subtract(x, y) {
+    var x = parseFloat(x);
+    var y = parseFloat(y);
+    return x - y;
+}
 
 // 34.
-
+function multiply(x, y) {
+    var x = parseFloat(x);
+    var y = parseFloat(y);
+    return x * y;
+}
 
 // 35.
-
+function divide(x, y) {
+    var x = parseFloat(x);
+    var y = parseFloat(y);
+    return x / y;
+}
 
 // 36.
-
+function quotient(x, y) {
+    return parseInt(x / y);// could use Math.floor instead
+}
 
 // 37.
-
+function remainder(x, y) {
+    var x = parseFloat(x);
+    var y = parseFloat(y);
+    return parseFloat(x % y);
+}
 
 // 38.
-
+function sumOfSquares(x, y) {
+    var x = parseFloat(x);
+    var y = parseFloat(y);
+    return (x ** 2) + (y ** 2);
+}
 
 // 39.
-
+function timesTwoPlusThree(x) {
+    var x = parseFloat(x);
+    return (x * 2) + 3;
+}
 
 // 40.
+function areaOfRectangle(x, y) {
+    var x = parseFloat(x);
+    var y = parseFloat(y);
+    return x * y;
+}
 
+// 41.
+function areaOfCircle(radius) {
+    var radius = parseFloat(radius);
+    return Math.PI * (radius * radius);
+}
+
+// 42.
+function circumference(radius) {
+    var radius = parseFloat(radius);
+    return 2 * Math.PI * radius;
+}
+
+// 43.
+function isVowel(x) {
+    return ["a", "e", "i", "o", "u"].indexOf(x.toLowerCase()) !== -1;
+} // The "!== -1" at the end will cause the function to return true when
+  // the input matches a value in the array. this gives the output a boolean value.
+
+// 44.
+function hasVowels(str) {
+    var str = str.toLowerCase();
+    var vowels = 'aeiou';
+    for (var i = 0; i < str.length; i++) {
+        if (vowels.indexOf(str[i]) !== -1) {
+            return true;
+        }
+    }
+    return false;
+}
+
+// 45.
+function countVowels(str) {
+    var str = str.toLowerCase().toString();
+    var vowels = 'aeiou';
+    var count = 0
+    for (var i = 0; i < str.length; i++) {
+        if (vowels.indexOf(str[i]) !== -1) {
+            count++;
+        }
+    }
+    return count;
+}
+
+// 46.
+//** Cannot figure out how to do this without using regular expressions
+// function removeVowels(str) {
+//     var str = str.toString();
+//     var vowels = 'aeiouAEIOU';
+//     for (var i = 0; i < str.length; i++) {
+//         if (vowels.indexOf(str[i]) !== -1) {
+//             return str.replace(str[i],'');
+//         }
+//     }
+//     // return newStr;
+// }
+function removeVowels(string) {
+    return string.replace(/[aeiou]/gi, "");
+}
+
+// 47.
+function startsWithVowel (string) {
+    var string = string.toString();
+    var vowels = "aeiouAEIOU";
+    return vowels.indexOf(string[0]) !== -1;
+}
+
+// 48.
+function endsWithVowel (string) {
+    var string = string.toString();
+    var vowels = "aeiouAEIOU";
+    return vowels.indexOf(string[string.length - 1]) !== -1;
+}
+
+// 49.
+function startsAndEndsWithVowel(string) {
+    var vowels = "aeiouAEIOU";
+    return (
+        vowels.indexOf(string[0]) !== -1 && vowels.indexOf(string[string.length - 1]) !== -1);
+}
+
+// 50.
+var first = function (seq) {
+    var newArray = seq.split(',');
+    var firstValue = newArray.slice(0);
+    return firstValue;
+}
+
+// 51.
+
+
+// 52.
+
+
+// 53.
+
+
+// 54.
+
+
+// 55.
+
+
+// 56.
 
 
 // 57.
-// Write a function definition named firstAndSecond that takes in sequence and returns the first and second value of that sequence as an array.
-
 function firstAndSecond (a, b, c) {
 
 }
