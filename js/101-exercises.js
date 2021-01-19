@@ -294,31 +294,49 @@ function startsAndEndsWithVowel(string) {
 }
 
 // 50.
-var first = function (seq) {
-    var newArray = seq.split(',');
-    var firstValue = newArray.slice(0);
-    return firstValue;
+var first = function (array) {
+    return array[0];
 }
 
 // 51.
-
+var second = function (array){
+    return array[1];
+}
 
 // 52.
-
+var third = function (array) {
+    return array[2];
+}
 
 // 53.
-
+var forth = function (array) {
+    return array[3];
+}
 
 // 54.
-
+var last = function(array) {
+    return array[array.length -1]
+}
 
 // 55.
-
+var secondToLast = function(array) {
+    return array[array.length -2]
+}
 
 // 56.
-
+var thirdToLast = function(array) {
+    return array[array.length -3]
+}
 
 // 57.
-function firstAndSecond (a, b, c) {
+function firstAndSecond(array) {
+    return array.slice(0, 2); // the second number in .slice is
+}                             // how many items/indexes to slice out
+                              // nameOfArray.slice(start, n(stopping point))
 
+// 58.
+var firstAndLast = function (array) { //will not work for array of numbers
+    var first = array[0].split();
+    var last = array[array.length -1].split();
+    return first.concat(last);
 }
