@@ -34,17 +34,17 @@ fruits.sort().reverse();
 var fruitsAndVeggies = fruits.concat(vegetables);
 
 // 11.
-function addOne (x) {
-   return parseFloat(x) + 1;
+function addOne(x) {
+    return parseFloat(x) + 1;
 }
 
 // 12.
-function isPositive (x) {
+function isPositive(x) {
     return parseFloat(x) > 0;
 }
 
 // 13.
-function isNegative (x) {
+function isNegative(x) {
     return parseFloat(x) < 0;
 }
 
@@ -54,7 +54,7 @@ function isOdd(x) {
 }
 
 // 15.
-function isEven (x) {
+function isEven(x) {
     return parseFloat(x) % 2 == 0;
 }
 
@@ -216,7 +216,7 @@ function areaOfRectangle(x, y) {
 // 41.
 function areaOfCircle(radius) {
     var radius = parseFloat(radius);
-    return Math.PI * (radius * radius);
+    return Math.PI * (radius ** 2);
 }
 
 // 42.
@@ -273,14 +273,14 @@ function removeVowels(string) {
 }
 
 // 47.
-function startsWithVowel (string) {
+function startsWithVowel(string) {
     var string = string.toString();
     var vowels = "aeiouAEIOU";
     return vowels.indexOf(string[0]) !== -1;
 }
 
 // 48.
-function endsWithVowel (string) {
+function endsWithVowel(string) {
     var string = string.toString();
     var vowels = "aeiouAEIOU";
     return vowels.indexOf(string[string.length - 1]) !== -1;
@@ -299,7 +299,7 @@ var first = function (array) {
 }
 
 // 51.
-var second = function (array){
+var second = function (array) {
     return array[1];
 }
 
@@ -314,18 +314,18 @@ var forth = function (array) {
 }
 
 // 54.
-var last = function(array) {
-    return array[array.length -1]
+var last = function (array) {
+    return array[array.length - 1]
 }
 
 // 55.
-var secondToLast = function(array) {
-    return array[array.length -2]
+var secondToLast = function (array) {
+    return array[array.length - 2]
 }
 
 // 56.
-var thirdToLast = function(array) {
-    return array[array.length -3]
+var thirdToLast = function (array) {
+    return array[array.length - 3]
 }
 
 // 57.
@@ -336,7 +336,44 @@ function firstAndSecond(array) {
 
 // 58.
 var firstAndLast = function (array) { //will not work for array of numbers
-    var first = array[0].split();
-    var last = array[array.length -1].split();
-    return first.concat(last);
+    return [first(array), last(array)];
 }
+
+
+// 59.
+var firstToLast = function (array) {
+    array.push(array.shift())
+    return array;
+}
+
+
+// 60. // The reduce() method executes a reducer function (that you provide) on
+//        each element of the array, resulting in single output value.
+var sumAll = function (array) {
+    return array.reduce(function (x, y) {
+        return x + y
+    }, 0);
+}
+
+
+// 60.
+var mean = function (array) {
+    return array.reduce(function (x, y) {
+        return x + y / array.length
+    }, 0);
+}
+
+
+// 61.
+var median = function (array) {
+    if (array.length % 2 !==0){
+        return array[Math.floor(array.length/ 2)]
+    } else {
+        return array
+    }
+}
+// function median(arr) {
+//     let mid = Math.floor(arr.length / 2)
+//     arr.sort()
+//     return arr.length % 2 !== 0 ? arr[mid] : (arr[mid - 1] + arr[mid]) / 2;
+// };
