@@ -365,15 +365,92 @@ var mean = function (array) {
 
 
 // 61.
-var median = function (array) {
-    if (array.length % 2 !==0){
-        return array[Math.floor(array.length/ 2)]
-    } else {
-        return array
-    }
+var mean = function (array) {
+    return array.reduce(function (x, y) {
+        return x + y / array.length
+    }, 0);
 }
-// function median(arr) {
-//     let mid = Math.floor(arr.length / 2)
-//     arr.sort()
-//     return arr.length % 2 !== 0 ? arr[mid] : (arr[mid - 1] + arr[mid]) / 2;
-// };
+
+
+// 62.
+function median(arr) {
+    let mid = Math.floor(arr.length / 2)
+    arr.sort()
+    return arr.length % 2 !== 0 ? arr[mid] : (arr[mid - 1] + arr[mid]) / 2;
+};
+
+
+
+// 63.
+var maxMinusMin = function (array) {
+    return (Math.max(...array) - Math.min(...array))
+}
+
+
+// 64.
+function productOfAll(array){
+    var product = 1;
+    array.forEach(function(element) {
+        product *= element;
+    }); return(product);
+}
+
+
+// 65.
+function getHighestNumber (array) {
+    return Math.max(...array);
+}
+
+
+// 66.
+function getSmallestNumber (array) {
+    return Math.min(...array);
+}
+
+
+// 67.
+function onlyOddNumbers (array) {
+    var onlyOdd = [];
+    for (var i = 0; i <= array.length; i++) {
+        if (isOdd(array[i])) {
+            onlyOdd.push(array[i]);
+        }
+    }
+    return onlyOdd;
+}
+
+
+// 68.
+function onlyEvenNumbers (array) {
+    var onlyEven = [];
+    for (var i = 0; i <= array.length; i++) {
+        if (isEven(array[i])) {
+            onlyEven.push(array[i]);
+        }
+    }
+    return onlyEven;
+}
+
+
+// 69.
+function onlyPositiveNumbers (array) {
+    var onlyPositive = [];
+    for (var i = 0; i <= array.length; i++) {
+        if (isPositive(array[i])) {
+            onlyPositive.push(array[i]);
+        }
+    }
+    return onlyPositive;
+}
+
+
+// 70.
+function onlyNegativeNumbers (array) {
+    var onlyNegative =[];
+    for (var i = 0; i <= array.length; i++) {
+        if ( isNegative(array[i])) {
+            onlyNegative.push(array[i]);
+        }
+    }
+    return onlyNegative;
+}
