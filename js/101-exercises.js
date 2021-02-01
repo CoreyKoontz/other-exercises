@@ -780,3 +780,69 @@ const shoppingCart = {
 
 
 // 96.
+function getTaxRate (obj) {
+    return obj.tax;
+}
+
+
+// 97.
+function numberOfItemTypes (obj) {
+    var itemTypes = [];
+    for (var i = 0; i < obj.items.length; i++) {
+        if (itemTypes.includes(obj.items[i])) {
+            continue;
+        }
+        itemTypes.push(obj.items[i].title)
+    }
+    return itemTypes.length;
+}
+
+
+// 98.
+function totalNumberOfItems (obj) {
+    var totalItems = 0;
+    for (var i = 0; i < obj.items.length; i++) {
+        totalItems += obj.items[i].quantity;
+    }
+    return totalItems;
+}
+
+
+// 99.
+function getAverageItemPrice (obj) {
+    var total = 0
+    for (var i = 0; i < obj.items.length; i++) {
+        total += obj.items[i].price;
+    }
+    return total / obj.items.length;
+}
+
+
+// 100.
+function getAverageSpentPerItem (obj) {
+    var totalPrice = 0;
+    var totalItems = 0;
+    for (var i = 0; i < obj.items.length; i++) {
+        totalPrice += obj.items[i].price * obj.items[i].quantity;
+        totalItems += obj.items[i].quantity;
+    }
+    return totalPrice / totalItems;
+}
+
+
+// 101.
+function mostSpentOnItem (obj) {
+    var mostSpentOn = {
+        title: '',
+        price: 0,
+        quantity: 0,
+    }
+    for (var i = 0; i < obj.items.length; i++) {
+        if ((obj.items[i].price * obj.items[i].quantity)
+            >
+            (mostSpentOn.price * mostSpentOn.quantity)) {
+            mostSpentOn = obj.items[i];
+        }
+    }
+    return mostSpentOn;
+}
