@@ -380,7 +380,6 @@ function median(arr) {
 };
 
 
-
 // 63.
 var maxMinusMin = function (array) {
     return (Math.max(...array) - Math.min(...array))
@@ -388,28 +387,29 @@ var maxMinusMin = function (array) {
 
 
 // 64.
-function productOfAll(array){
+function productOfAll(array) {
     var product = 1;
-    array.forEach(function(element) {
+    array.forEach(function (element) {
         product *= element;
-    }); return(product);
+    });
+    return (product);
 }
 
 
 // 65.
-function getHighestNumber (array) {
+function getHighestNumber(array) {
     return Math.max(...array);
 }
 
 
 // 66.
-function getSmallestNumber (array) {
+function getSmallestNumber(array) {
     return Math.min(...array);
 }
 
 
 // 67.
-function onlyOddNumbers (array) {
+function onlyOddNumbers(array) {
     var onlyOdd = [];
     for (var i = 0; i <= array.length; i++) {
         if (isOdd(array[i])) {
@@ -421,7 +421,7 @@ function onlyOddNumbers (array) {
 
 
 // 68.
-function onlyEvenNumbers (array) {
+function onlyEvenNumbers(array) {
     var onlyEven = [];
     for (var i = 0; i <= array.length; i++) {
         if (isEven(array[i])) {
@@ -433,7 +433,7 @@ function onlyEvenNumbers (array) {
 
 
 // 69.
-function onlyPositiveNumbers (array) {
+function onlyPositiveNumbers(array) {
     var onlyPositive = [];
     for (var i = 0; i <= array.length; i++) {
         if (isPositive(array[i])) {
@@ -445,12 +445,338 @@ function onlyPositiveNumbers (array) {
 
 
 // 70.
-function onlyNegativeNumbers (array) {
-    var onlyNegative =[];
+function onlyNegativeNumbers(array) {
+    var onlyNegative = [];
     for (var i = 0; i <= array.length; i++) {
-        if ( isNegative(array[i])) {
+        if (isNegative(array[i])) {
             onlyNegative.push(array[i]);
         }
     }
     return onlyNegative;
 }
+
+
+// 71.
+function hasEvens(array) {
+    for (var i = 0; i <= array.length; i++) {
+        if (array[i] % 2 === 0) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+// 72.
+function countEvens(array) {
+    var count = [];
+    for (var i = 0; i <= array.length; i++) {
+        if (array[i] % 2 === 0) {
+            count.push(array[i])
+        }
+    }
+    return count.length;
+}
+
+// 73.
+function hasOdds (array) {
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] % 2 !== 0) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+// 74.
+function countOdds(array) {
+    var count = [];
+    for (var i = 0; i <= array.length; i++) {
+        if (array[i] % 2 !== 0) {
+            count.push(array[i])
+        }
+    }
+    return count.length;
+}
+
+
+// 75.
+function countNegatives(array) {
+    var count = [];
+    for (var i = 0; i < array.length; i++) {
+        if (isNegative(array[i])) {
+            count.push(array[i])
+        }
+    }
+    return count.length;
+}
+
+
+// 76.
+function countPositives(array) {
+    var count = [];
+    for (var i = 0; i < array.length; i++) {
+        if (isPositive(array[i])) {
+            count.push(array[i])
+        }
+    }
+    return count.length;
+}
+
+
+// 77.
+function onlyPositiveEvens (array) {
+    var positiveEvens = [];
+    for (var i = 0; i < array.length; i++) {
+        if (isPositiveEven(array[i])) {
+            positiveEvens.push(array[i]);
+        }
+    }
+    return positiveEvens;
+}
+
+
+// 78.
+function onlyPositiveOdd (array) {
+    var positiveOdd = [];
+    for (var i = 0; i < array.length; i++) {
+        if (isPositiveOdd(array[i])) {
+            positiveOdd.push(array[i]);
+        }
+    }
+    return positiveOdd;
+}
+
+
+// 79.
+function onlyNegativeEvens (array) {
+    var negativeEvens = [];
+    for (var i = 0; i < array.length; i++) {
+        if (isNegativeEven(array[i])) {
+            negativeEvens.push(array[i]);
+        }
+    }
+    return negativeEvens;
+}
+
+
+// 80.
+function onlyNegativeOdds (array) {
+    var negativeOdds = [];
+    for (var i = 0; i < array.length; i++) {
+        if (isNegativeOdd(array[i])) {
+            negativeOdds.push(array[i]);
+        }
+    }
+    return negativeOdds;
+}
+
+// 81.
+function shortestString (array) {
+    return array.reduce((a, b) => a.length <= b.length ? a : b)
+}
+
+
+// 82.
+function longestString (array) {
+    return array.reduce((a, b) => a.length >= b.length ? a : b)
+}
+
+
+// 83.
+function getUniqueValues (array) {
+    var uniqueValues = [];
+    for (var i = 0; i < array.length; i++) {
+        if (uniqueValues.includes(array[i])) {
+            continue;
+        }
+        uniqueValues.push(array[i])
+    }
+    return uniqueValues;
+}
+
+
+// 84.
+function elementsTimesTwo(array) {
+    for (var i = 0; i < array.length; i++) {
+        array[i] *= 2;
+    }
+    return array;
+}
+
+
+// 85.
+function flatten (array) {
+    return array.flat();
+}
+
+
+// 86.
+function addOneToArray (array) {
+    for (var i = 0; i < array.length; i++) {
+        array[i] + 1;
+    }
+    return array;
+}
+
+
+const tukeyPaper = {
+    title: "The Future of Data Analysis",
+    author: "John W. Tukey",
+    link: "https://projecteuclid.org/euclid.aoms/1177704711",
+    year_published: 1962
+};
+
+const thomasPaper = {
+    title: "A mathematical model of glutathione metabolism",
+    author: "Rachel Thomas",
+    link: "https://www.ncbi.nlm.nih.gov/pubmed/18442411",
+    year_published: 2008
+};
+
+// 87.
+function getPaperTitle (obj) {
+    return obj.title;
+}
+
+
+// 88.
+function getYearPublished (obj) {
+    return obj.year_published;
+}
+
+
+const book = {
+    title: "Genetic Algorithms and Machine Learning for Programmers",
+    price: 36.99,
+    author: "Frances Buontempo"
+};
+
+// 89.
+function getPrice (obj) {
+    return obj.price;
+}
+
+
+// 90.
+function getBookAuthor (obj) {
+    return obj.author;
+}
+
+
+const books = [
+    {
+        title: "Genetic Algorithms and Machine Learning for Programmers",
+        price: 36.99,
+        author: "Frances Buontempo"
+    },
+    {
+        title: "The Visual Display of Quantitative Information",
+        price: 38.0,
+        author: "Edward Tufte"
+    },
+    {
+        title: "Practical Object-Oriented Design",
+        author: "Sandi Metz",
+        price: 30.47
+    },
+    {
+        title: "Weapons of Math Destruction",
+        author: "Cathy O'Neil",
+        price: 17.44
+    }
+];
+
+
+// 91.
+function getNumberOfBooks (obj) {
+    return obj.length;
+}
+
+
+// 92.
+function totalOfBookPrices (array) {
+    var total = 0
+    for (var i = 0; i < array.length; i++) {
+        total += array[i].price;
+    }
+    return total;
+}
+
+
+// 93.
+function getAverageBookPrice (array) {
+    var total = 0
+    for (var i = 0; i < array.length; i++) {
+        total += array[i].price;
+    }
+    return total / array.length;
+}
+
+
+// 94.
+function highestPriceBook (array) {
+    var book = {
+        title: "blank",
+        author: "blank",
+        price: 0
+    }
+    for(var i = 0; i < array.length; i++) {
+        if(array[i].price > book.price) {
+            book = array[i];
+        }
+    }
+return book;
+}
+
+
+// 95.
+function lowestPriceBook (array) {
+    var book = {
+        title: "blank",
+        author: "blank",
+        price: 10000
+    }
+    for(var i = 0; i < array.length; i++) {
+        if(array[i].price < book.price) {
+            book = array[i];
+        }
+    }
+    return book;
+}
+
+
+const shoppingCart = {
+    tax: 0.08,
+    items: [
+        {
+            title: "orange juice",
+            price: 3.99,
+            quantity: 1
+        },
+        {
+            title: "rice",
+            price: 1.99,
+            quantity: 3
+        },
+        {
+            title: "beans",
+            price: 0.99,
+            quantity: 3
+        },
+        {
+            title: "chili sauce",
+            price: 2.99,
+            quantity: 1
+        },
+        {
+            title: "chocolate",
+            price: 0.75,
+            quantity: 9
+        }
+    ]
+};
+
+
+// 96.
